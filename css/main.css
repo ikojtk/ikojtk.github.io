@@ -543,6 +543,70 @@ canvas {
   height: 100%;
   width: 100%; }
 
+.b-team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .b-team__sidebar {
+    width: 400px; }
+  .b-team__content {
+    padding-left: 35px;
+    width: 100%; }
+
+.b-team-list {
+  padding: 0 10px 10px; }
+  .b-team-list__item {
+    border: 2px solid #cdb36d;
+    cursor: pointer;
+    opacity: 0.6;
+    -webkit-transition: opacity .4s;
+    transition: opacity .4s; }
+    .b-team-list__item + .b-team-list__item {
+      margin-top: 10px; }
+    .b-team-list__item:hover, .b-team-list__item.is-active {
+      opacity: 1; }
+  .b-team-list__name {
+    font-family: 'katona_iiultralight';
+    font-size: 36px;
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    color: #cdb36d; }
+
+.b-player-info {
+  overflow: hidden; }
+  .b-player-info__nickname {
+    font-family: 'katona_iiultralight';
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #cdb36d; }
+  .b-player-info__name {
+    font-family: 'katona_iiultralight';
+    font-size: 32px;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 600;
+    color: #827450; }
+  .b-player-info__date-reg {
+    font-family: 'kievitpro_extralight';
+    font-size: 16px;
+    line-height: 1.2;
+    color: #cdb36d;
+    font-weight: 600; }
+  .b-player-info__text {
+    font-family: 'kievitpro_extralight';
+    font-size: 14px;
+    line-height: 1.4;
+    color: #b0b0b0;
+    font-weight: 600; }
+    .b-player-info__text + .b-player-info__text {
+      padding-top: 14px; }
+  .b-player-info p {
+    margin: 0; }
+
 @-webkit-keyframes marquee {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
