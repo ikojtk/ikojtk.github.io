@@ -336,7 +336,7 @@ canvas {
     height: 39px;
     width: 418px;
     padding: 0 20px 0 18px;
-    background-image: url("/img/pattern-right.png"), url("/img/pattern-left.png");
+    background-image: url("/img/pattern-right.png"), url("//img/pattern-left.png");
     background-position: center right, center left;
     background-repeat: no-repeat, no-repeat;
     background-color: #000; }
@@ -441,7 +441,7 @@ canvas {
     width: 658px;
     padding: 0 20px 0 18px;
     margin-bottom: 40px;
-    background-image: url("/img/pattern-right.png"), url("/img/pattern-left.png");
+    background-image: url("/img/pattern-right.png"), url("//img/pattern-left.png");
     background-position: center right, center left;
     background-repeat: no-repeat, no-repeat;
     background-color: #000; }
