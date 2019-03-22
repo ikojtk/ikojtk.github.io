@@ -551,19 +551,22 @@ canvas {
     width: 400px; }
   .b-team__content {
     padding-left: 35px;
-    width: 100%; }
+    width: calc(100% - 240px); }
 
 .b-team-list {
   padding: 0 10px 10px; }
   .b-team-list__item {
-    border: 2px solid #cdb36d;
+    border: 2px solid #cdb36d !important;
     cursor: pointer;
     opacity: 0.6;
+    outline: none;
     -webkit-transition: opacity .4s;
     transition: opacity .4s; }
     .b-team-list__item + .b-team-list__item {
       margin-top: 10px; }
-    .b-team-list__item:hover, .b-team-list__item.is-active {
+    .b-team-list__item:hover {
+      opacity: 1; }
+    .b-team-list__item.slick-current {
       opacity: 1; }
   .b-team-list__name {
     font-family: 'katona_iiultralight';
@@ -574,28 +577,49 @@ canvas {
     font-weight: 600;
     width: 100%;
     color: #cdb36d; }
+  .b-team-list .slick-track {
+    -webkit-transform: none !important;
+            transform: none !important; }
+
+.b-player-list__item {
+  outline: none; }
 
 .b-player-info {
-  overflow: hidden; }
+  overflow: hidden;
+  padding-right: 50px; }
   .b-player-info__nickname {
     font-family: 'katona_iiultralight';
     font-size: 36px;
     text-transform: uppercase;
     font-weight: 600;
-    color: #cdb36d; }
+    color: #cdb36d;
+    padding: 20px 0 40px;
+    position: relative; }
+    .b-player-info__nickname::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: #cdb36d;
+      opacity: 0.6; }
   .b-player-info__name {
     font-family: 'katona_iiultralight';
-    font-size: 32px;
+    font-size: 34px;
     text-transform: uppercase;
     padding: 10px;
     font-weight: 600;
-    color: #827450; }
+    color: #827450;
+    padding: 40px 0 10px; }
   .b-player-info__date-reg {
     font-family: 'kievitpro_extralight';
     font-size: 16px;
     line-height: 1.2;
     color: #cdb36d;
-    font-weight: 600; }
+    font-weight: 600;
+    padding-bottom: 30px; }
   .b-player-info__text {
     font-family: 'kievitpro_extralight';
     font-size: 14px;
