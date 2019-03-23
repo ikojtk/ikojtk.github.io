@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyPage</title>
     <link rel="stylesheet" href="css/vendor/slick/slick.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/vendor/wow/animate.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -17,26 +17,30 @@
       </div>
       <div class="b-header">
         <div class="b-header__inner">
-          <div class="b-header__pattern-left"></div>
-          <div class="b-header__pattern-right"></div>
+          <div class="b-header__pattern-left wow fadeInLeft" data-wow-duration="0.6s" data-wow-delay="7s"></div>
+          <div class="b-header__pattern-right wow fadeInRight" data-wow-duration="0.6s" data-wow-delay="7s"></div>
           <div class="b-header__nav">
             <ul class="b-main-nav">
-              <li class="b-main-nav__item"><a class="b-main-nav__link" href="#">Главная</a></li>
-              <li class="b-main-nav__item"><a class="b-main-nav__link" href="#">Новости</a></li>
-              <li class="b-main-nav__item"><a class="b-logo b-logo--expendables" href="#"></a></li>
-              <li class="b-main-nav__item"><a class="b-main-nav__link" href="#">История</a></li>
-              <li class="b-main-nav__item"><a class="b-main-nav__link" href="#">Состав</a></li>
+              <li class="b-main-nav__item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="3s"><a class="b-main-nav__link" href="/">Главная</a></li>
+              <li class="b-main-nav__item wow fadeInLeft" data-wow-duration="2s" data-wow-delay="4s"><a class="b-main-nav__link" href="#news">Новости</a></li>
+              <li class="b-main-nav__item wow fadeIn" data-wow-duration="2s" data-wow-delay="5s"><a class="b-main-nav__link" href="/">
+                  <div class="b-logo b-logo--expendables"></div></a></li>
+              <li class="b-main-nav__item wow fadeInRight" data-wow-duration="2s" data-wow-delay="4s"><a class="b-main-nav__link" href="#story">История</a></li>
+              <li class="b-main-nav__item wow fadeInRight" data-wow-duration="2s" data-wow-delay="3s"><a class="b-main-nav__link" href="#team">Состав</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="b-box b-box--main-theme">
-        <div class="b-main-theme-mist"></div>
+      <div class="b-box b-box--main-theme wow fadeIn" id="main" data-wow-duration="3s">
+        <div class="b-main-theme-mist">
+          <div class="b-main-theme-mist__one wow fadeIn" data-wow-duration="60s" data-wow-delay="1s"></div>
+          <div class="b-main-theme-mist__two wow fadeIn" data-wow-duration="40s" data-wow-delay="1s"></div>
+        </div>
       </div>
-      <div class="b-box b-box--last-news">
+      <div class="b-box b-box--last-news" id="news">
         <div class="b-page-wrap">
           <div class="b-box-line b-box-line--last-news">
-            <div class="b-box-title">Новости</div><a class="b-btn-square" href="#"><span class="b-btn-square__text">Смотреть все новости</span></a>
+            <div class="b-box-title">Новости</div><a class="b-btn-square" href="#team"><span class="b-btn-square__text">Смотреть все новости</span></a>
           </div>
           <div class="b-news-cards">
             <div class="b-news-cards__row">
@@ -80,14 +84,14 @@
           </div>
         </div>
       </div>
-      <div class="b-box b-box--story">
+      <div class="b-box b-box--story" id="story">
         <div class="b-page-wrap">
           <div class="b-box-line">
             <div class="b-box-title">История</div>
           </div>
-          <div class="b-story b-story--right">
+          <div class="b-story b-story--right wow fadeInRight" data-wow-duration="2s" data-wow-offset="150">
             <div class="b-story__img b-story__img--story-1">
-              <canvas class="brush-effect" data-image="/img/story-1.png" data-pathid="path" data-brush="https://www.onlygfx.com/wp-content/uploads/2017/07/red-paint-brush-stroke-31.png"></canvas>
+              <canvas class="brush-effect" data-image="/img/story-1.png" data-pathid="path" data-brush="/img/brush.png"></canvas>
             </div>
             <div class="b-story__content">
               <div class="b-story__pattern"></div>
@@ -99,9 +103,9 @@
               </div>
             </div>
           </div>
-          <div class="b-story b-story--left">
+          <div class="b-story b-story--left wow fadeInLeft" data-wow-duration="2s" data-wow-offset="150">
             <div class="b-story__img b-story__img--story-2">
-              <canvas class="brush-effect" data-image="/img/story-2.png" data-pathid="path" data-brush="https://www.onlygfx.com/wp-content/uploads/2017/07/red-paint-brush-stroke-31.png"></canvas>
+              <canvas class="brush-effect" data-image="/img/story-2.png" data-pathid="path" data-brush="/img/brush.png"></canvas>
             </div>
             <div class="b-story__content">
               <div class="b-story__content-inner">
@@ -112,9 +116,9 @@
               </div>
             </div>
           </div>
-          <div class="b-story b-story--right">
+          <div class="b-story b-story--right wow fadeInRight" data-wow-duration="2s" data-wow-offset="150">
             <div class="b-story__img b-story__img--story-3">
-              <canvas class="brush-effect" data-image="/img/story-3.png" data-pathid="path" data-brush="https://www.onlygfx.com/wp-content/uploads/2017/07/red-paint-brush-stroke-31.png"></canvas>
+              <canvas class="brush-effect" data-image="/img/story-3.png" data-pathid="path" data-brush="/img/brush.png"></canvas>
             </div>
             <div class="b-story__content">
               <div class="b-story__content-inner">
@@ -127,7 +131,7 @@
           </div>
         </div>
       </div>
-      <div class="b-box b-box--team">
+      <div class="b-box b-box--team" id="team">
         <div class="b-page-wrap">
           <div class="b-box-line">
             <div class="b-box-title">Состав</div>
@@ -207,9 +211,8 @@
   </body>
   <script type="text/javascript" src="js/vendor/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="js/vendor/slick/slick.min.js"></script>
-  <script type="text/javascript" src="https://unpkg.com/imask"></script>
   <script type="text/javascript" src="js/vendor/waitforimages/jquery.waitforimages.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="js/vendor/wow/wow.min.js"></script>
   <script type="text/javascript" src="js/vendor/gsap/TweenMax.min.js"></script>
   <script type="text/javascript" src="js/vendor/gsap/plugins/MorphSVGPlugin.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>

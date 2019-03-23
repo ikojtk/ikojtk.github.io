@@ -216,22 +216,20 @@ canvas {
   height: 100%;
   width: 100%;
   overflow: hidden; }
-  .b-main-theme-mist::after {
-    content: '';
+  .b-main-theme-mist__one {
     position: absolute;
     height: 100%;
     width: 300vw;
-    background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-1.png") repeat-x;
+    background: url("/img/animate-fog-1.png") repeat-x;
     background-size: contain;
     background-position: center;
     -webkit-animation: marquee 60s linear infinite;
             animation: marquee 60s linear infinite; }
-  .b-main-theme-mist::before {
-    content: '';
+  .b-main-theme-mist__two {
     position: absolute;
     height: 100%;
     width: 300vw;
-    background: url("https://res.cloudinary.com/dkr52htco/image/upload/v1536173269/fog-2.png") repeat-x;
+    background: url("/img/animate-fog-1.png") repeat-x;
     background-size: contain;
     background-position: center;
     -webkit-animation: marquee 40s linear infinite;
@@ -336,7 +334,7 @@ canvas {
     height: 39px;
     width: 418px;
     padding: 0 20px 0 18px;
-    background-image: url("/img/pattern-right.png"), url("//img/pattern-left.png");
+    background-image: url("/img/pattern-right.png"), url("/img/pattern-left.png");
     background-position: center right, center left;
     background-repeat: no-repeat, no-repeat;
     background-color: #000; }
@@ -441,7 +439,7 @@ canvas {
     width: 658px;
     padding: 0 20px 0 18px;
     margin-bottom: 40px;
-    background-image: url("/img/pattern-right.png"), url("//img/pattern-left.png");
+    background-image: url("/img/pattern-right.png"), url("/img/pattern-left.png");
     background-position: center right, center left;
     background-repeat: no-repeat, no-repeat;
     background-color: #000; }
@@ -477,9 +475,7 @@ canvas {
     position: relative;
     border-radius: 50%;
     height: 464px;
-    min-width: 520px;
-    background-image: url("/img/sprite-story.jpg");
-    background-repeat: no-repeat; }
+    min-width: 520px; }
   .b-story__content {
     max-width: 700px;
     padding: 0 20px; }
@@ -551,10 +547,15 @@ canvas {
     width: 400px; }
   .b-team__content {
     padding-left: 35px;
-    width: calc(100% - 240px); }
+    width: calc(100% - 300px); }
 
 .b-team-list {
-  padding: 0 10px 10px; }
+  padding: 0 10px 10px;
+  opacity: 0;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s; }
+  .b-team-list.has-init-slider {
+    opacity: 1; }
   .b-team-list__item {
     border: 2px solid #cdb36d !important;
     cursor: pointer;
@@ -581,8 +582,14 @@ canvas {
     -webkit-transform: none !important;
             transform: none !important; }
 
-.b-player-list__item {
-  outline: none; }
+.b-player-list {
+  opacity: 0;
+  -webkit-transition: opacity .4s;
+  transition: opacity .4s; }
+  .b-player-list.has-init-slider {
+    opacity: 1; }
+  .b-player-list__item {
+    outline: none; }
 
 .b-player-info {
   overflow: hidden;

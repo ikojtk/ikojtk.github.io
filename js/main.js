@@ -11,13 +11,18 @@ var SliderJs = {
 		});
 
 		$(this.b_main_slider).slick({
-			speed: 1000,
+			speed: 2000,
 			slidesToShow: 1,
 			slidesToSlide: 1,
 			autoplay: true,
 			autoplaySpeed: 6000,
 			arrows: false,
+			adaptiveHeight: true,
 			asNavFor: '.slider-nav'
+		});
+
+		$('.slider-nav').on('init', function(event, slick, direction){
+			$(this).addClass(SliderJs.class_init_slider);
 		});
 
 		$('.slider-nav').slick({
@@ -31,9 +36,39 @@ var SliderJs = {
 	}
 };
 
+var MainJS = {
+	init: function(){
+
+		var wow = new WOW(
+			{
+				boxClass:        'wow',      // animated element css class (default is wow)
+				mobile:          true,       // trigger animations on mobile devices (default is true)
+				live:            true,       // act on asynchronously loaded content (default is true)
+				callback:        brushEffect,
+				scrollContainer: null,    // optional scroll container selector, otherwise use window,
+				resetAnimation:  true,     // reset animation on end (default is true)
+			}
+		);
+		wow.init();
+
+		$(document).on('click', '.b-main-nav__link', function(e){
+			var dest = $(this).attr("href");
+
+			e.preventDefault();
+
+			$("html, body").stop().animate({
+				'scrollTop': $(dest).offset().top
+			}, 2000);
+
+		});
+
+	}
+}
+
 
 
 $(document).ready(function(){
+	MainJS.init();
 	SliderJs.init();
 });
 
@@ -95,9 +130,7 @@ class ClippingBrushImage {
 	}
 
 	animateBrush () {
-		var id_svg = document.getElementById(this.pathId)
-
-		let bezierData = MorphSVGPlugin.pathDataToBezier(id_svg)
+		let bezierData = MorphSVGPlugin.pathDataToBezier(`#${this.pathId}`)
 		let brushPosition = {}
 		TweenMax.to(brushPosition, 3, {
 			bezier: {
@@ -133,6 +166,14 @@ class ClippingBrushImage {
 	}
 }
 
-Array.from(document.querySelectorAll('.brush-effect')).forEach(el => {
-	new ClippingBrushImage(el, el.dataset.image, el.dataset.pathid, el.dataset.brush)
-});
+function brushEffect(box){
+
+	if($(box).hasClass('b-story')){
+		var el = $(box).find('.brush-effect').get(0);
+
+		setTimeout(function(){
+			new ClippingBrushImage(el, el.dataset.image, el.dataset.pathid, el.dataset.brush)
+		}, 2000);
+	}
+
+}
